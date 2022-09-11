@@ -32,7 +32,7 @@ nav{
 .btn{
     display: flex;
 }
-.filter-container button{
+.filter-container button, .rightSection button{
     color: #5EA4A4;
     padding: 8px;
     font-size: 0.9rem;
