@@ -13,3 +13,49 @@ nav{
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.filter-container{
+   background-color: red;
+   padding: 10px;
+   height: 5vh;
+   width: 75%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin: auto;
+   position: absolute;
+   top: 13%;
+   left: 50%;
+   transform: translateX(-50%);
+   border-radius: 8px;
+}
+.btn{
+    display: flex;
+}
+.filter-container button{
+    color: #5EA4A4;
+    padding: 8px;
+    font-size: 0.9rem;
+    height: 32px;
+    font-weight: 800;
+    background-color: #E8F7F7;
+    border: none;
+    cursor: pointer;
+}
+.btn-container{
+margin-right: 10px;
+}
+.fa-close{
+    background-color: #5EA4A4;
+    color: #fff;
+    text-align: center;
+    border: none;
+    font-size: 24px;
+    height: 32px;
+    width: 30px;
+    cursor: pointer; 
+}
+.clear label a{
+    color: #5EA4A4;
+    font-weight: 800;
+}
