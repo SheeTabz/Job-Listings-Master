@@ -63,9 +63,16 @@ margin-right: 10px;
 
 .jobLists{
     background-color: #fff;
+    border-left: 4px solid transparent;
+    border-radius: 5px 0px 0px 5px;
     width: 75%;
     margin: auto;
     margin-top: 65px;
+    transition: 0.2s ease;
+}
+.jobLists:hover{
+    border-left: 4px solid #5EA4A4;
+
 }
 .list-container, .leftSection, .section1{
     display: flex;
