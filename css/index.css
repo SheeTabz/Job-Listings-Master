@@ -5,6 +5,7 @@ body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    background-color: #F0FAFB;
 }
 nav{
     height: 15vh;
@@ -15,7 +16,7 @@ nav{
 }
 
 .filter-container{
-   background-color: red;
+   background-color: #fff;
    padding: 10px;
    height: 5vh;
    width: 75%;
@@ -58,4 +59,44 @@ margin-right: 10px;
 .clear label a{
     color: #5EA4A4;
     font-weight: 800;
+}
+
+.jobLists{
+    background-color: #fff;
+    width: 75%;
+    margin: auto;
+    margin-top: 65px;
+}
+.list-container, .leftSection, .section1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+.image{
+    padding: 0px 30px ;
+}
+.rightSection{
+    padding-right: 30px;
+}
+.rightSection button{
+    margin-left: 10px;
+}
+#new, #featured{
+ background-color: #5EA4A4;
+ color: #fff;
+ font-weight: 800;
+ padding: 6px 10px;
+ border-radius: 20px;
+ margin: 0px 10px;
+}
+#featured{
+    background-color:  #2F3936;
+}
+.section1 h4{
+    color: #5EA4A4;
+}
+.details{
+    color: darkgrey;
+    padding-bottom: 15px;
+    font-weight: 900;
 }
