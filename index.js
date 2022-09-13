@@ -1,5 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
+
     const jobLists = document.querySelector(".jobLists");
+    const filter = document.querySelector(".filter");
     function fetchData() {
         fetch('data.json')
             .then(response => response.json())
@@ -42,18 +43,25 @@ document.addEventListener("DOMContentLoaded", () => {
             const button1 = document.createElement('button')
             button1.setAttribute('id', 'role')
             button1.innerText = item.role
+            button1.addEventListener('click', () => {
+                filterRole(item.role)
+            })
             rightSection.appendChild(button1)
             const button2 = document.createElement('button')
-            button1.setAttribute('id', 'level')
+            button2.setAttribute('id', 'level')
             button2.innerText = item.level
+            button2.addEventListener('click', () => {
+                filterRole(item.level)
+            })
             rightSection.appendChild(button2)
             item.languages.map(language => {
                 const buttons = document.createElement('button')
                 buttons.setAttribute('class', 'languages')
                 buttons.innerText = language
+                buttons.addEventListener('click', () => {
+                    filterRole(language)
+                })
                 rightSection.appendChild(buttons)
-              
-
 
             })
             jobLists.appendChild(listContainer);
@@ -61,8 +69,21 @@ document.addEventListener("DOMContentLoaded", () => {
             listContainer.appendChild(rightSection);
 
         })
+        
+        const filterContainer = document.createElement('div');
+        filterContainer.className = 'filter-container';
+        const btn = document.createElement('div');
+        btn.className = 'btn';
+
+        function filterRole(item) {
+           btn.innerHTML += `<div class="btn-container">
+                             <button>${item}</button><i class="fa fa-close"></i>
+                            </div>`
+           filter.appendChild(filterContainer);
+           filterContainer.appendChild(btn);
+           
+        }
     }
-})
 
 
 
