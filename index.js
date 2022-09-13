@@ -1,6 +1,8 @@
 
 const jobLists = document.querySelector(".jobLists");
 const filter = document.querySelector(".filter");
+
+// FUNCTION THAT FETCHES DATA
 function fetchData() {
     fetch('data.json')
         .then(response => response.json())
@@ -8,6 +10,7 @@ function fetchData() {
 }
 fetchData()
 
+// FUNCTION THAT APPENDS ITEMS TO THE DOM
 const appendToDom = (data) => {
 
     data.map(item => {
@@ -24,17 +27,13 @@ const appendToDom = (data) => {
                                      <div class="jobContent">
                                       <div class="section1">
                                        <h4>${item.company}</h4>
-
                                       <span>${news()}</span>
-                                    <span>${featured()}</span>
-                                       
+                                    <span>${featured()}</span> 
                                       </div>
                                        <h3>${item.position}</h3>
                                       <div class="details">
-                                       <label for="postedAt">${item.postedAt} . ${item.contract} . ${item.location} </label> .
-                                    
+                                       <label for="postedAt">${item.postedAt} . ${item.contract} . ${item.location} </label> 
                                       </div>
-        
                                      </div>`
 
 
@@ -70,25 +69,41 @@ const appendToDom = (data) => {
 
     })
 
-    const filterContainer = document.createElement('div');
-    filterContainer.className = 'filter-container';
-    const btn = document.createElement('div');
-    btn.className = 'btn';
-    const clear = document.createElement('div');
-    clear.className = 'clear';
-    function filterRole(item) {
-        btn.innerHTML += `<div class="btn-container">
-                             <button>${item}</button><i class="fa fa-close"></i>
-                            </div>`
-       
-        clear.innerHTML =  ` <label for=""> <a href="">Clear</a> </label>`
-        filter.appendChild(filterContainer);
-        filterContainer.appendChild(btn);
-        filterContainer.appendChild(clear);
-
-    }
 }
 
+
+const filterContainer = document.createElement('div');
+filterContainer.className = 'filter-container';
+const btn = document.createElement('div');
+btn.className = 'btn';
+const clear = document.createElement('div');
+clear.className = 'clear';
+
+// FUNCTION THAT RENDERS THE FILTER BUTTONS
+function filterRole(item) {
+    jobLists.innerHTML = ''
+    
+    btn.innerHTML += `<div class="btn-container">
+                         <button onClick="fetches"> ${item}</button><i class="fa fa-close" onClick="clears"></i>
+                        </div>`
+    clear.innerHTML =  ` <label for="" onClick="clears"> <a href="">Clear</a> </label>`
+   
+    filter.appendChild(filterContainer);
+    filterContainer.appendChild(btn);
+    filterContainer.appendChild(clear);
+
+}
+
+// // FUNCTION TO CLEAR 
+// const clears = (e) => {
+//     // alert('Clear clicked')
+//     if(e.target.className === 'fa-close') {
+//  filter.removeChild(filterContainer);
+//     }
+//     // else if(){
+//     //  alert('Close clicked');
+//     // }
+// }
 
 
 
