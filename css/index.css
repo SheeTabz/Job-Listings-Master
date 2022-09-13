@@ -50,11 +50,16 @@ margin-right: 10px;
     background-color: #5EA4A4;
     color: #fff;
     text-align: center;
+    border-radius: 0px 3px 3px 0px;
     border: none;
     font-size: 24px;
     height: 32px;
     width: 30px;
     cursor: pointer; 
+    transition: 0.4s ease;
+}
+.fa-close:hover{
+    background-color: #2F3936;
 }
 .clear label a{
     color: #5EA4A4;
@@ -73,6 +78,7 @@ margin-right: 10px;
     justify-content: space-between; 
 }
 .list-container{
+    box-shadow: 0px 1px 5px #7b8e8e;
     border-radius: 5px 0px 0px 5px;
     border-left: 4px solid transparent;
     background-color: #fff;
@@ -91,6 +97,12 @@ margin-right: 10px;
 }
 .rightSection button{
     margin-left: 10px;
+    border-radius: 3px;
+    transition: 0.4s ease;
+}
+.rightSection button:hover{
+    background-color: #5EA4A4;
+    color: #fff;
 }
 #new, #featured{
  background-color: #5EA4A4;

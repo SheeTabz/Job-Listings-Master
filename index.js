@@ -81,7 +81,7 @@ const appendToDom = (data) => {
                              <button>${item}</button><i class="fa fa-close"></i>
                             </div>`
        
-        clear.innerHTML =  ` <label for=""> <a href="http://">Clear</a> </label>`
+        clear.innerHTML =  ` <label for=""> <a href="">Clear</a> </label>`
         filter.appendChild(filterContainer);
         filterContainer.appendChild(btn);
         filterContainer.appendChild(clear);
