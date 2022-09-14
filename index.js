@@ -62,6 +62,16 @@ function fetchData() {
                         rightSection.appendChild(buttons)
 
                     })
+                    item.tools.map(tool => {
+                        const btnTool = document.createElement('button')
+                        btnTool.setAttribute('class', 'tools')
+                        btnTool.innerText = tool
+                        btnTool.addEventListener('click', () => {
+                            filterRole(tool)
+                        })
+                        rightSection.appendChild(btnTool)
+
+                    })
                     jobLists.appendChild(listContainer);
                     listContainer.appendChild(leftSection);
                     listContainer.appendChild(rightSection);
@@ -77,7 +87,8 @@ function fetchData() {
             btn.className = 'btn';
             const clear = document.createElement('div');
             clear.className = 'clear';
-
+           
+            
             // FUNCTION THAT RENDERS THE FILTER BUTTONS AND FILTERED ITEMS
             function filterRole(item) {
                 jobLists.innerHTML = ''
@@ -91,24 +102,24 @@ function fetchData() {
                 
                 // FILTERS DATA DEPENDING ON THE SELECTRED BUTTON AND RENDERS TO DOM
                 const fil = data.filter(items => {
-                    const lan = items.languages.map(language => language).split(',');
-                    return items.role === item || items.level === item || lan === item ? items : null
+                    const lan = items.languages.map(language => language).join(', ');
+                    const tool = items.tools.map(tool => tool).join(', ')
+                    console.log(lan)
+                    return items.role === item || items.level === item || lan === item || tool === item? items : null
                 })
-                console.log(fil)
                 appendToDom(fil)
-                console.log(item)
+        
             }
+            // function clears () {
+            //     btn.innerHTML = '';
+            //     filterContainer.remove();
+            // }
           
-
         })
       
 }
 fetchData()
 
-const clears = () => {
-    btn.innerHTML = '';
-    filterContainer.remove();
-}
 
 
 
