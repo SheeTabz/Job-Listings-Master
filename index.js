@@ -81,12 +81,12 @@ clear.className = 'clear';
 
 // FUNCTION THAT RENDERS THE FILTER BUTTONS
 function filterRole(item) {
-    jobLists.innerHTML = ''
+    // jobLists.innerHTML = ''
     
     btn.innerHTML += `<div class="btn-container">
-                         <button onClick="fetches"> ${item}</button><i class="fa fa-close" onClick="clears"></i>
+                         <button onClick="fetches"> ${item}</button><i class="fa fa-close" onClick="clearEl()"></i>
                         </div>`
-    clear.innerHTML =  ` <label for="" onClick="clears"> <a href="">Clear</a> </label>`
+    clear.innerHTML =  ` <label for="" onClick="clears()">Clear </label>`
    
     filter.appendChild(filterContainer);
     filterContainer.appendChild(btn);
@@ -94,17 +94,15 @@ function filterRole(item) {
 
 }
 
-// // FUNCTION TO CLEAR 
-// const clears = (e) => {
-//     // alert('Clear clicked')
-//     if(e.target.className === 'fa-close') {
-//  filter.removeChild(filterContainer);
-//     }
-//     // else if(){
-//     //  alert('Close clicked');
-//     // }
-// }
+// FUNCTION TO CLEAR 
+const clears = () => {
+    btn.innerHTML = '';
+    filterContainer.remove();
+}
+const clearEl = () => {
+console.log(btn)
 
+}
 
 
 
