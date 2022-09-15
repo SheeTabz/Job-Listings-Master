@@ -1,4 +1,3 @@
-
 const jobLists = document.querySelector(".jobLists");
 const filter = document.querySelector(".filter");
 
@@ -110,10 +109,7 @@ function fetchData() {
                 appendToDom(fil)
         
             }
-            // function clears () {
-            //     btn.innerHTML = '';
-            //     filterContainer.remove();
-            // }
+    
           
         })
       
