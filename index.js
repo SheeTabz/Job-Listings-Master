@@ -92,32 +92,35 @@ function fetchData() {
             function filterRole(item) {
                 jobLists.innerHTML = ''
                 btn.innerHTML += `<div class="btn-container">
-                         <button onClick="fetches"> ${item}</button><i class="fa fa-close" ></i>
+                         <button > ${item}</button><i  class="fa fa-close" ></i>
                         </div>`
-                clear.innerHTML = ` <label for="" onClick="clears()">Clear </label>`
+                clear.innerHTML = ` <label for="">Clear </label>`
                 filter.appendChild(filterContainer);
                 filterContainer.appendChild(btn);
                 filterContainer.appendChild(clear);
-                let btn1 = btn.childNodes[0].childNodes[2]
-                console.log(btn1);
-                
-                btn1.addEventListener('click', (e) => clears)
-                //  let parent = e.target.parentNode
-                //  parent.remove()
+                btn.addEventListener('click',(e)=>{
+                    
+                    e.target.parentNode.remove()
             
+                })
+
                 
                 // FILTERS DATA DEPENDING ON THE SELECTRED BUTTON AND RENDERS TO DOM
                 const fil = data.filter(items => {
-                    const lan = items.languages.map(language => language).join(', ');
+                
+                    const lan = items.languages.map(language => language);
+                    let matching = lan.find(it => it === item ? true : false); 
+
                     const tool = items.tools.map(tool => tool).join(', ')
-                    console.log(lan)
-                    return items.role === item || items.level === item || lan === item || tool === item? items : null
+                    console.log(matching)
+                    
+                    return items.role === item || items.level === item || matching === item || tool === item? items : null
                 })
                 appendToDom(fil)
         
             }
     
-          
+           
         })
       
 }
