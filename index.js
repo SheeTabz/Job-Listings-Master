@@ -94,7 +94,7 @@ function fetchData() {
                 btn.innerHTML += `<div class="btn-container">
                          <button > ${item}</button><i  class="fa fa-close" ></i>
                         </div>`
-                clear.innerHTML = ` <label for="">Clear </label>`
+                clear.innerHTML = ` <label for="" >Clear </label>`
                 filter.appendChild(filterContainer);
                 filterContainer.appendChild(btn);
                 filterContainer.appendChild(clear);
@@ -113,8 +113,13 @@ function fetchData() {
                 else if(myBtn.length = 0){
                     filterContainer.remove()
                 }
-                
                
+                clear.addEventListener('click',(e)=>{
+                  btn.innerHTML = ''
+                    clear.parentNode.remove()
+                   
+                })
+             
 
                 
                 // FILTERS DATA DEPENDING ON THE SELECTRED BUTTON AND RENDERS TO DOM
