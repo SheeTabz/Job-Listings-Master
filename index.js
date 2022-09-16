@@ -92,12 +92,19 @@ function fetchData() {
             function filterRole(item) {
                 jobLists.innerHTML = ''
                 btn.innerHTML += `<div class="btn-container">
-                         <button onClick="fetches"> ${item}</button><i class="fa fa-close" onClick="clearEl()"></i>
+                         <button onClick="fetches"> ${item}</button><i class="fa fa-close" ></i>
                         </div>`
                 clear.innerHTML = ` <label for="" onClick="clears()">Clear </label>`
                 filter.appendChild(filterContainer);
                 filterContainer.appendChild(btn);
                 filterContainer.appendChild(clear);
+                let btn1 = btn.childNodes[0].childNodes[2]
+                console.log(btn1);
+                
+                btn1.addEventListener('click', (e) => clears)
+                //  let parent = e.target.parentNode
+                //  parent.remove()
+            
                 
                 // FILTERS DATA DEPENDING ON THE SELECTRED BUTTON AND RENDERS TO DOM
                 const fil = data.filter(items => {
