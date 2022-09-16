@@ -78,8 +78,8 @@ function fetchData() {
                 })
 
             }
-
             appendToDom(data)
+
             const filterContainer = document.createElement('div');
             filterContainer.className = 'filter-container';
             const btn = document.createElement('div');
@@ -98,11 +98,23 @@ function fetchData() {
                 filter.appendChild(filterContainer);
                 filterContainer.appendChild(btn);
                 filterContainer.appendChild(clear);
-                btn.addEventListener('click',(e)=>{
-                    
-                    e.target.parentNode.remove()
-            
-                })
+
+                // CLOSE 
+                let myBtn = btn.childNodes
+                
+                if(myBtn.length > 0) {
+                myBtn.forEach(button => {
+                    let close = button.childNodes[2];
+                    close.addEventListener('click',(e)=>{
+                        e.target.parentNode.remove()
+                    })
+                    console.log(close);
+                })}
+                else if(myBtn.length = 0){
+                    filterContainer.remove()
+                }
+                
+               
 
                 
                 // FILTERS DATA DEPENDING ON THE SELECTRED BUTTON AND RENDERS TO DOM
@@ -112,7 +124,7 @@ function fetchData() {
                     let matchLan = lan.find(it => it === item ? true : false); 
                     const tool = items.tools.map(tool => tool)
                     let matchTools = tool.find(it => it === item ? true : false); 
-                    console.log(matchTools)
+                
                     return items.role === item || items.level === item || matchLan === item || matchTools === item? items : null
                 })
                 appendToDom(fil)
