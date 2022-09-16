@@ -61,9 +61,13 @@ margin-right: 10px;
 .fa-close:hover{
     background-color: #2F3936;
 }
-.clear label a{
+.clear label {
     color: #5EA4A4;
     font-weight: 800;
+    cursor: pointer;
+}
+.clear label:hover{
+    text-decoration: underline;
 }
 
 .jobLists{
