@@ -109,12 +109,11 @@ function fetchData() {
                 const fil = data.filter(items => {
                 
                     const lan = items.languages.map(language => language);
-                    let matching = lan.find(it => it === item ? true : false); 
-
-                    const tool = items.tools.map(tool => tool).join(', ')
-                    console.log(matching)
-                    
-                    return items.role === item || items.level === item || matching === item || tool === item? items : null
+                    let matchLan = lan.find(it => it === item ? true : false); 
+                    const tool = items.tools.map(tool => tool)
+                    let matchTools = tool.find(it => it === item ? true : false); 
+                    console.log(matchTools)
+                    return items.role === item || items.level === item || matchLan === item || matchTools === item? items : null
                 })
                 appendToDom(fil)
         
