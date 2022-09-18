@@ -107,6 +107,7 @@ function fetchData() {
                     let close = button.childNodes[2];
                     close.addEventListener('click',(e)=>{
                         e.target.parentNode.remove()
+                       
                     })
                     console.log(close);
                 })}
@@ -115,8 +116,9 @@ function fetchData() {
                 }
                
                 clear.addEventListener('click',(e)=>{
-                  btn.innerHTML = ''
+              
                     clear.parentNode.remove()
+                    window.location.reload();
                    
                 })
              
